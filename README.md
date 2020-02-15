@@ -2,6 +2,24 @@
 
 > Guide to the game of Go powered by Nuxt.js
 
+# Agenda
+
+To create a free, modern, interactive, mobile-friendly and highly maintainable resource for learning Go.
+
+# Roadmap
+
+- [ ] Basic page functionality
+- [ ] Rules
+- [ ] Basics (ko, eyes, ladder, snapback?, end of the game)
+- [ ] Resources (online servers, editors, communities)
+- [ ] >>> First release <<<
+- [ ] Advanced page functionality (rich sgf player, etc)
+- [ ] Intermediate advice
+- [ ] Internationalization
+- [ ] *Celebrate New Years of year 2076*
+- [ ] >>> Second release <<<
+- [ ] ...
+
 ## Build Setup
 
 ``` bash
