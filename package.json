@@ -10,7 +10,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "deploy": "npm run build && push-dir --dir=dist --branch=master --cleanup"
+    "deploy": "npm run build && gh-pages -d dist -b master"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
@@ -26,6 +26,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
+    "gh-pages": "^2.2.0",
     "node-sass": "^4.13.1",
     "push-dir": "^0.4.1",
     "sass-loader": "^8.0.2"
