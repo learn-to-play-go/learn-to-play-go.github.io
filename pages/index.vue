@@ -8,6 +8,7 @@
         <div>
           Me dumb
         </div>
+        <Board />
       </div>
     </div>
     <div class="section is-medium">
@@ -22,7 +23,12 @@
 </template>
 
 <script>
+import Board from '@/components/Board.vue'
+
 export default {
-  name: 'Index'
+  name: 'Index',
+  components: {
+    Board
+  }
 }
 </script>

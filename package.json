@@ -17,6 +17,7 @@
     "@nuxtjs/bulma": "^1.2.6",
     "@nuxtjs/style-resources": "^1.0.0",
     "nuxt": "^2.0.0",
+    "pixi.js": "^5.2.1",
     "vue-click-outside": "^1.0.7"
   },
   "devDependencies": {
