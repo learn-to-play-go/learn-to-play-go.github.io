@@ -40,15 +40,9 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://bootstrap-vue.js.org
-    'bootstrap-vue/nuxt',
-    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/bulma',
     '@nuxtjs/axios'
   ],
-  bootstrapVue: {
-    bootstrapCSS: true,
-    bootstrapVueCSS: true
-  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
@@ -63,6 +57,13 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+    },
+    postcss: {
+      preset: {
+        features: {
+          customProperties: false
+        }
+      }
     }
   }
 }

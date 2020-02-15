@@ -1,6 +1,23 @@
 <template>
   <div class="container">
-    <div>Index</div>
+    <div class="section">
+      <div class="container">
+        <h1 class="title">
+          Intro and stuff
+        </h1>
+        <div>
+          Me dumb
+        </div>
+      </div>
+    </div>
+    <div class="section is-medium">
+      <div class="container">
+        <h1 class="subtitle">
+          Rules and stuff
+        </h1>
+        <div>Don't die</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -9,6 +26,3 @@ export default {
   name: 'Index'
 }
 </script>
-
-<style>
-</style>
