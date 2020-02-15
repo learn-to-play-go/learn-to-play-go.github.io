@@ -12,12 +12,12 @@ To create a free, modern, interactive, mobile-friendly and highly maintainable r
 - [ ] Rules
 - [ ] Basics (ko, eyes, ladder, snapback?, end of the game)
 - [ ] Resources (online servers, editors, communities)
-- [ ] >>> First release <<<
+- [ ] **>>> First release <<<**
 - [ ] Advanced page functionality (rich sgf player, etc)
 - [ ] Intermediate advice
 - [ ] Internationalization
 - [ ] *Celebrate New Years of year 2076*
-- [ ] >>> Second release <<<
+- [ ] **>>> Second release <<<**
 - [ ] ...
 
 ## Build Setup
