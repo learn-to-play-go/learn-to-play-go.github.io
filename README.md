@@ -10,15 +10,28 @@ To create a free, modern, interactive, mobile-friendly and highly maintainable r
 
 - [ ] Basic page functionality
 - [ ] Rules
-- [ ] Basics (ko, eyes, ladder, snapback?, end of the game)
-- [ ] Resources (online servers, editors, communities)
+- [ ] Basics (ko, eyes, ladder, snapback, end of the game)
+- [ ] Ranks and servers
+- [ ] Other resources (editors, communities, tsumego, etc)
+- [ ] About page (agenda, feedback email?, libs used, project links)
+- [ ] Adjust the design ($primary, overall layout)
+- [ ] Fix this readme
 - [ ] **>>> First release <<<**
-- [ ] Advanced page functionality (rich sgf player, etc)
-- [ ] Intermediate advice
-- [ ] Internationalization
-- [ ] *Celebrate New Years of year 2076*
+- [ ] Intermediate advice~
+- [ ] Prepare everything for i18n
+- [ ] Set up the contribution guide
 - [ ] **>>> Second release <<<**
 - [ ] ...
+
+# Basic page functionality 
+
+- [x] Layout and routing
+- [x] Basic board functionality
+- [x] Scenarios API
+- [ ] Restart the scenario (after successfully finishing it)
+- [ ] Reduce navbar breakpoint
+- [ ] Add footer
+- [ ] Dark theme (with cookies)
 
 ## Build Setup
 
