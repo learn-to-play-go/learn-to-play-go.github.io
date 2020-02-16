@@ -6,9 +6,9 @@
           Intro and stuff
         </h1>
         <div>
-          Me dumb
+          Play 3-3 and then 4-4 or die
         </div>
-        <Board />
+        <BoardScenario />
       </div>
     </div>
     <div class="section is-medium">
@@ -23,12 +23,12 @@
 </template>
 
 <script>
-import Board from '@/components/Board.vue'
+import BoardScenario from '@/components/BoardScenario'
 
 export default {
   name: 'Index',
   components: {
-    Board
+    BoardScenario
   }
 }
 </script>
