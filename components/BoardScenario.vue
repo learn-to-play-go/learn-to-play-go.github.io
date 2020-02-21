@@ -35,24 +35,6 @@
 <script>
 import tenuki from 'tenuki'
 
-/*
-
-                user input
-                    |
-                    |
-                    V
- check if it follows the scenario with validateMove()
-      |                               |
-      |                               |
-      V                               |
-  it does, so if there's a response do reponseTimeout() and advance through the scenario (or end it with success)
-                                      |
-                                      |
-                                      V
-  it doesn't, so throw an error with showMessage() and do undoTimeout()
-
-*/
-
 export default {
   name: 'BoardScenario',
   props: {

@@ -28,10 +28,10 @@ To create a free, modern, interactive, mobile-friendly and highly maintainable r
 - [x] Layout and routing
 - [x] Basic board functionality
 - [x] Scenarios API
-- [ ] Restart the scenario (after successfully finishing it)
+- [x] Restart the scenario (after successfully finishing it)
 - [ ] Reduce navbar breakpoint
 - [ ] Add footer
-- [ ] Dark theme (with cookies) https://github.com/jenil/bulmaswatch
+- [ ] Dark theme (with cookies)
 
 ## Build Setup
 
