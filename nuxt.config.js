@@ -41,8 +41,14 @@ export default {
   */
   modules: [
     '@nuxtjs/bulma',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/style-resources'
   ],
+  styleResources: {
+    sass: [
+      '@/assets/main.sass'
+    ]
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

@@ -23,7 +23,10 @@
           <nuxt-link to="/basics" class="navbar-item is-tab is-unselectable">
             Basics
           </nuxt-link>
-          <NavbarDropdown :links="linksIntermediate" />
+          <nuxt-link to="/about" class="navbar-item is-tab is-unselectable">
+            About
+          </nuxt-link>
+          <!-- <NavbarDropdown :links="linksIntermediate" /> -->
         </div>
       </div>
     </nav>
@@ -31,26 +34,28 @@
 </template>
 
 <script>
-import NavbarDropdown from '@/components/NavbarDropdown'
+// import NavbarDropdown from '@/components/NavbarDropdown'
 
 export default {
   name: 'MainNavbar',
   components: {
-    NavbarDropdown
+    // NavbarDropdown
   },
   data: () => {
     return {
       burgerIsOpen: false,
       linksIntermediate: [
-        { to: '/', title: 'Opening' },
-        { to: '/basics', title: 'Tipss' }
+        { to: '/asd', title: 'Opening' },
+        { to: '/qwe', title: 'Tipss' }
       ]
     }
   }
 }
 </script>
 
-<style lang="sass">
-.navbar
-  padding-left: 1.5rem
+<style lang="sass" scoped>
+@import "~bulma"
+.nuxt-link-exact-active
+  @extend .is-active
+.nuxt-link-active
 </style>

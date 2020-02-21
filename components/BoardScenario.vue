@@ -14,7 +14,6 @@
             v-if="message.shown && (message.type === messageTypes.success)"
             type="button"
             class="button button-restart is-primary"
-            disabled
             @click="restart()"
           >
             Try it again
@@ -105,7 +104,8 @@ export default {
         responseTimeoutObj: null, // TODO: find a better solution for timers?
         responseTimeoutMS: 500,
         lastMoveUndo: false,
-        lastMoveResponse: false
+        lastMoveResponse: false,
+        lastMoveRestart: false
       }
     },
     initializeGame () {
@@ -176,6 +176,10 @@ export default {
         this.lastMoveResponse = false
         return false
       }
+      if (this.lastMoveRestart) {
+        this.lastMoveRestart = false
+        return false
+      }
       const state = game.currentState()
       if ((state.playedPoint) && (this.validateMove(state.playedPoint.x, state.playedPoint.y))) {
         this.hideMessage()
@@ -201,14 +205,10 @@ export default {
       return playedX === expectedX && playedY === expectedY
     },
     restart () {
-      // TODO: figure out the restart without having to fork the Tenuki lib
-
-      /* this.unblockUserInput()
-      for (let i = 0; i < this.boardSize * this.boardSize; ++i) {
-        this.game.intersectionAt(i, i / this.boardSize).value = 'empty'
-      }
-      this.scenario.current = 0 // reapply the prop
-      */
+      this.lastMoveRestart = true
+      this.game.clear()
+      this.unblockUserInput()
+      this.scenario.current = 0
     }
   }
 }

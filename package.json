@@ -17,13 +17,14 @@
     "@nuxtjs/bulma": "^1.2.6",
     "@nuxtjs/style-resources": "^1.0.0",
     "nuxt": "^2.0.0",
-    "pixi.js": "^5.2.1",
-    "tenuki": "^0.3.1",
-    "vue-click-outside": "^1.0.7"
+    "tenuki": "git+ssh://git@github.com:learn-to-play-go/tenuki.git",
+    "vue-click-outside": "^1.0.7",
+    "wgo": "^3.0.0-alpha.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/style-resources": "^1.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",

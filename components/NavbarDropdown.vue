@@ -44,10 +44,3 @@ export default {
   }
 }
 </script>
-
-<style lang="sass">
-@import "~bulma"
-.nuxt-link-exact-active
-  @extend .is-active
-.nuxt-link-active
-</style>

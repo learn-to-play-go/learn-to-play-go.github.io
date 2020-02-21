@@ -31,7 +31,7 @@ To create a free, modern, interactive, mobile-friendly and highly maintainable r
 - [ ] Restart the scenario (after successfully finishing it)
 - [ ] Reduce navbar breakpoint
 - [ ] Add footer
-- [ ] Dark theme (with cookies)
+- [ ] Dark theme (with cookies) https://github.com/jenil/bulmaswatch
 
 ## Build Setup
 
