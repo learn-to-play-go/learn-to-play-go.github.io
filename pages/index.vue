@@ -6,9 +6,9 @@
           Intro and stuff
         </h1>
         <div>
-          Play 3-3 and then 4-4 or die
+          Play 2-2 and then 4-4 or die
         </div>
-        <BoardScenario />
+        <BoardScenario :scenario="first_scenario" />
       </div>
     </div>
     <div class="section is-medium">
@@ -24,11 +24,20 @@
 
 <script>
 import BoardScenario from '@/components/BoardScenario'
+import { Scenario, Step } from '@/components/Scenario'
 
 export default {
   name: 'Index',
   components: {
     BoardScenario
+  },
+  data () {
+    return {
+      first_scenario: new Scenario([
+        new Step(2, 2, 3, 3, 'wow it works'),
+        new Step(4, 4, 3, 4, null, null, 'tadaa')
+      ])
+    }
   }
 }
 </script>

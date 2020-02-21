@@ -16,7 +16,15 @@
             class="button button-restart is-primary"
             @click="restart()"
           >
-            Try it again
+            Restart this puzzle
+          </button>
+          <button
+            v-if="message.shown && (message.type === messageTypes.error)"
+            type="button"
+            class="button button-restart is-danger"
+            @click="undo()"
+          >
+            Try a different move
           </button>
         </div>
       </div>
@@ -47,11 +55,22 @@ import tenuki from 'tenuki'
 
 export default {
   name: 'BoardScenario',
+  props: {
+    scenario: {
+      type: Object,
+      default: () => {}
+    }
+  },
   data () {
     return this.getDefaultData()
   },
   mounted () {
-    this.initializeGame()
+    this.scenario.on('responding', this.preResponse.bind(this))
+    this.scenario.on('responded', this.onResponse.bind(this))
+    this.scenario.on('incorrect', this.onFail.bind(this))
+    this.scenario.on('ended', this.onEnd.bind(this))
+    this.scenario.on('restarted', this.onRestart.bind(this))
+    this.initializeBoard()
   },
   methods: {
     getDefaultData () {
@@ -83,61 +102,16 @@ export default {
           title: 'Placeholder',
           text: 'Lorem ipsum'
         },
-        scenario: {
-          current: 0,
-          steps: [
-            {
-              answer: { x: 3, y: 3 },
-              response: { x: 3, y: 4 },
-              failMessage: 'Wrong one'
-            },
-            {
-              answer: { x: 4, y: 4 },
-              response: { x: 4, y: 3 },
-              failMessage: 'Heh'
-            }
-          ]
-        },
-        inputAllowed: true,
-        undoTimeoutObj: null,
-        undoTimeoutMS: 1500,
-        responseTimeoutObj: null, // TODO: find a better solution for timers?
-        responseTimeoutMS: 500,
-        lastMoveUndo: false,
-        lastMoveResponse: false,
-        lastMoveRestart: false
+        inputAllowed: true
       }
     },
-    initializeGame () {
-      this.game = new tenuki.Game({
-        element: this.$refs.tenukiBoard,
-        boardSize: 5
-      })
-      this.game.callbacks.postRender = this.advanceThroughScenario
-    },
-    timeout (obj, ms, callback) {
-      if (obj !== null) { return false }
-      obj = setTimeout(() => {
-        callback()
-        obj = null
-      }, ms)
-    },
-    undoTimeout (ms) {
-      this.timeout(this.undoTimeoutObj, ms || this.undoTimeoutMS, this.undo)
-    },
-    responseTimeout (ms) {
-      this.timeout(this.responseTimeoutObj, ms || this.responseTimeoutMS, this.response)
-    },
+
+    /* UI */
     blockUserInput () {
       this.inputAllowed = false
     },
     unblockUserInput () {
       this.inputAllowed = true
-    },
-    undo () {
-      this.unblockUserInput()
-      this.lastMoveUndo = true
-      this.game.undo()
     },
     showMessage (type, text, title) {
       this.message.type = type
@@ -148,67 +122,54 @@ export default {
     hideMessage () {
       this.message.shown = false
     },
-    scenarioEnded () {
-      if (this.scenario.current >= this.scenario.steps.length) {
-        this.showMessage(this.messageTypes.success)
-        this.blockUserInput()
-        return true
-      }
-      return false
-    },
-    response () {
-      this.lastMoveResponse = true
-      this.game.playAt(
-        this.scenario.steps[this.scenario.current].response.y - 1,
-        this.scenario.steps[this.scenario.current].response.x - 1
-      )
-      this.scenario.current += 1
-      this.unblockUserInput()
-
-      this.scenarioEnded()
-    },
-    advanceThroughScenario (game) {
-      if (this.lastMoveUndo) { // attached to postRender callback it executes even after game.undo
-        this.lastMoveUndo = false
-        return false
-      }
-      if (this.lastMoveResponse) { // attached to postRender callback it executes even after game.playAt
-        this.lastMoveResponse = false
-        return false
-      }
-      if (this.lastMoveRestart) {
-        this.lastMoveRestart = false
-        return false
-      }
-      const state = game.currentState()
-      if ((state.playedPoint) && (this.validateMove(state.playedPoint.x, state.playedPoint.y))) {
-        this.hideMessage()
-        if (this.scenario.steps[this.scenario.current].response) { // some scenarios end on a user move
-          this.blockUserInput()
-          this.responseTimeout()
-        } else {
-          this.scenario.current += 1
-          this.scenarioEnded()
-        }
-      } else {
-        this.showMessage(this.messageTypes.error, this.scenario.steps[this.scenario.current].failMessage)
-        this.blockUserInput()
-        this.undoTimeout()
-        return false
-      }
-      return true
-    },
-    validateMove (playedX, playedY) {
-      // the board api has x and y confused, I'm using humane markup so I swap these 2
-      const expectedX = this.scenario.steps[this.scenario.current].answer.y - 1
-      const expectedY = this.scenario.steps[this.scenario.current].answer.x - 1
-      return playedX === expectedX && playedY === expectedY
-    },
     restart () {
-      this.lastMoveRestart = true
+      this.scenario.restart()
+    },
+
+    /* Board */
+    initializeBoard () {
+      this.game = new tenuki.Game({
+        element: this.$refs.tenukiBoard,
+        boardSize: 5
+      })
+      this.game.callbacks.postMove = this.playerMoved
+    },
+    undo () {
+      this.hideMessage()
+      this.unblockUserInput()
+      this.game.undo()
+    },
+
+    /* Scenario */
+    playerMoved (game, currentPlayer) {
+      const isPlayer = currentPlayer !== 'white'
+      if (!isPlayer) { return } // ignore automatic moves (always white)
+      const played = game.currentState().playedPoint
+      if (!played) { return }
+      this.scenario.play(played.x + 1, played.y + 1) // `game` returns coords that start with 0, but I start mine with 1
+    },
+    preResponse () {
+      this.blockUserInput()
+    },
+    onResponse (x, y, message) {
+      this.game.playAt(x - 1, y - 1)
+      this.unblockUserInput()
+      if (message && (message.length > 0)) {
+        this.showMessage(this.messageTypes.plain, message)
+      }
+    },
+    onFail (message) {
+      this.blockUserInput()
+      this.showMessage(this.messageTypes.error, message)
+    },
+    onEnd (message) {
+      this.blockUserInput()
+      this.showMessage(this.messageTypes.success, message)
+    },
+    onRestart () {
       this.game.clear()
       this.unblockUserInput()
-      this.scenario.current = 0
+      this.hideMessage()
     }
   }
 }
