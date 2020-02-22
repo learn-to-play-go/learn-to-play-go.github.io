@@ -158,19 +158,8 @@ export default {
 </script>
 
 <style lang="sass">
-@import "~/assets/tenuki.css"
-
-.board-container
-  width: 20em
-  height: 20em
-  margin-top: 1em
-.board
-  width: 100% !important
-  height: 100% !important
 .message
   margin-top: 0.5em
 .button-restart
   margin-top: 0.5em
-.no-input
-  pointer-events: none
 </style>

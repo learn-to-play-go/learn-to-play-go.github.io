@@ -8,7 +8,7 @@
         <div>
           Play 2-2 and then 4-4 or die
         </div>
-        <BoardScenario :scenario="first_scenario" />
+        <BoardScenario :scenario="scenarios.intro" />
       </div>
     </div>
     <div class="section is-medium">
@@ -17,6 +17,7 @@
           Rules and stuff
         </h1>
         <div>Don't die</div>
+        <BoardStatic :layout="layouts.intro" />
       </div>
     </div>
   </div>
@@ -24,19 +25,20 @@
 
 <script>
 import BoardScenario from '@/components/BoardScenario'
-import { Scenario, Step } from '@/components/Scenario'
+import BoardStatic from '@/components/BoardStatic'
+import Scenarios from '@/components/ScenarioList'
+import Layouts from '@/components/LayoutList'
 
 export default {
   name: 'Index',
   components: {
-    BoardScenario
+    BoardScenario,
+    BoardStatic
   },
   data () {
     return {
-      first_scenario: new Scenario([
-        new Step(2, 2, 3, 3, 'wow it works'),
-        new Step(4, 4, 3, 4, null, null, 'tadaa')
-      ])
+      scenarios: Scenarios,
+      layouts: Layouts
     }
   }
 }
