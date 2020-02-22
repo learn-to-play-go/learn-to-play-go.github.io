@@ -115,6 +115,12 @@ export default {
         boardSize: 5
       })
       this.game.callbacks.postMove = this.playerMoved
+      this.setLayout()
+    },
+    setLayout () {
+      if (this.scenario.presetLayout) {
+        this.game.stonesAt(this.scenario.presetLayout.getStones(), 'black')
+      }
     },
     undo () {
       this.hideMessage()
@@ -133,8 +139,14 @@ export default {
     preResponse () {
       this.blockUserInput()
     },
-    onResponse (x, y, message) {
-      this.game.playAt(x - 1, y - 1)
+    onResponse (x, y, message, isPass = false, isLastMove = false) {
+      if (isPass) {
+        if (!isLastMove) {
+          this.game.pass()
+        }
+      } else {
+        this.game.playAt(x - 1, y - 1)
+      }
       this.unblockUserInput()
       if (message && (message.length > 0)) {
         this.showMessage(this.messageTypes.plain, message)
@@ -150,6 +162,7 @@ export default {
     },
     onRestart () {
       this.game.clear()
+      this.setLayout()
       this.unblockUserInput()
       this.hideMessage()
     }

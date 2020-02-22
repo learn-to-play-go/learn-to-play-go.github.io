@@ -14,7 +14,14 @@ const layouts = {
     '. . WT W W',
     'B . B . W',
     '. . . . .'
-  ], 'Look at this lmao')
+  ], 'Look at this lmao'),
+  liberties: new Layout([
+    '. . . . .',
+    '. . S . .',
+    '. S B S .',
+    '. . . . .',
+    '. . . . .'
+  ])
 }
 
 export default layouts

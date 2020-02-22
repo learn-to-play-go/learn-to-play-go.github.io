@@ -42,11 +42,11 @@ export default {
     const labels = this.layout.getLabels()
 
     if (stones.length > 0) {
-      this.game.stonesAt(stones)
+      this.game.stonesAt(stones, 'black')
     }
 
     if (labels.length > 0) {
-      this.game.labelsAt(labels)
+      this.game.labelsAt(labels, 'black')
     }
   }
 }
