@@ -1,10 +1,10 @@
 const LabelTypes = {
   T: 'triangle',
   S: 'square',
-  R: 'circle',
-  A: 'a',
-  B: 'b',
-  C: 'c'
+  C: 'circle',
+  a: 'a',
+  b: 'b',
+  c: 'c'
 }
 
 const Colors = {

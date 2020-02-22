@@ -1,11 +1,11 @@
 import Layout from '~/components/Layout'
 
-//   T: 'triangle',
-//   S: 'square',
-//   R: 'circle',
-//   A: 'a',
-//   B: 'b',
-//   C: 'c'
+// T: 'triangle',
+// S: 'square',
+// C: 'circle',
+// a: 'a',
+// b: 'b',
+// c: 'c'
 
 const layouts = {
   intro: new Layout([

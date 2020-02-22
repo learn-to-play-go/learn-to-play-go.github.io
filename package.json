@@ -19,7 +19,7 @@
     "@nuxtjs/style-resources": "^1.0.0",
     "nuxt": "^2.0.0",
     "tenuki": "git+ssh://git@github.com:learn-to-play-go/tenuki.git",
-    "vue-click-outside": "^1.0.7",
+    "vue-click-outside": "^1.0.7"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
