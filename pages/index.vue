@@ -12,7 +12,7 @@
           <li>Black goes <strong>first</strong></li>
         </ul>
 
-        <BoardScenario :scenario="scenarios.intro" />
+        <BoardScenario :scenario="scenarios.anywhere" />
 
         Snippet: place a stone anywhere on the board
 

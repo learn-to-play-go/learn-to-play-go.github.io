@@ -15,6 +15,7 @@ class Step {
       info: messageInfo,
       fail: messageFail
     }
+    this.isAnywhere = (expectX < 0) && (expectY < 0)
     this.isPass = (responseX < 0) && (responseY < 0)
     this.responseMS = responseMS
     this.passMS = passMS
@@ -62,7 +63,7 @@ class Scenario extends EventEmitter {
   }
 
   validate (playedX, playedY) {
-    return (this.currentStep().expect.x === playedX) && (this.currentStep().expect.y === playedY)
+    return this.currentStep().isAnywhere || ((this.currentStep().expect.x === playedX) && (this.currentStep().expect.y === playedY))
   }
 
   isLastStep () {

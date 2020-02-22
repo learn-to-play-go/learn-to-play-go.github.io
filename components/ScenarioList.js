@@ -9,6 +9,9 @@ const scenarios = {
     new Step(2, 3, 3, 3, 'wow it works'),
     new Step(4, 4, 3, 4, null, null, 'tadaa')
   ]),
+  anywhere: new Scenario([
+    new Step(-1, -1, -1, -1, null, null, 'Great!', 0, 0)
+  ]),
   capture: new Scenario([
     new Step(3, 4, -1, -1, null, null, 'Excellent')
   ], new Layout([
