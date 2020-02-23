@@ -20,7 +20,7 @@ const scenarios = {
     new Step(-1, -1, -1, -1, null, 'Great!', 0, 0)
   ], 'Play anywhere on the board'),
   capture: new Scenario([
-    new Step(4, 3, -1, -1, "This move doesn't take away a liberty!", 'Excellent')
+    new Step(4, 3, -1, -1, "This move doesn't take away a liberty!", "Excellent! White's stone is now captured")
   ], "Capture white's stone",
   new Layout([
     '. . . . .',
@@ -30,7 +30,7 @@ const scenarios = {
     '. . . . .'
   ])),
   captureGroup: new Scenario([
-    new Step(3, 4, -1, -1, "This move doesn't take away a liberty!", 'Excellent')
+    new Step(3, 4, -1, -1, "This move doesn't take away a liberty!", "Excellent! White's group is now captured")
   ], "Capture white's group",
   new Layout([
     '. . B . .',
@@ -40,7 +40,7 @@ const scenarios = {
     '. . B . .'
   ])),
   captureEdge: new Scenario([
-    new Step(1, 2, -1, -1, "This move doesn't take away a liberty!", 'Excellent')
+    new Step(1, 2, -1, -1, "This move doesn't take away a liberty!", "It only took 2 stones to capture white's stone in the corner")
   ], "Capture white's stone",
   new Layout([
     'W . . . .',

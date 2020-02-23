@@ -8,30 +8,21 @@ To create a free, modern, interactive, mobile-friendly and highly maintainable r
 
 # Roadmap
 
-- [ ] Basic page functionality
-- [ ] Rules
-- [ ] Basics (ko, eyes, ladder, snapback, end of the game)
+- [x] Basic page functionality
+- [x] Rules
+- [ ] Basics (eyes, ladder, snapback, end of the game)
 - [ ] Ranks and servers
 - [ ] Other resources (editors, communities, tsumego, etc)
 - [ ] About page (agenda, feedback email?, libs used, project links)
-- [ ] Adjust the design ($primary, overall layout)
+- [x] Adjust the design ($primary, overall layout)
 - [ ] Fix this readme
 - [ ] **>>> First release <<<**
 - [ ] Intermediate advice~
 - [ ] Prepare everything for i18n
 - [ ] Set up the contribution guide
+- [ ] Dark theme (with cookies)
 - [ ] **>>> Second release <<<**
 - [ ] ...
-
-# Basic page functionality 
-
-- [x] Layout and routing
-- [x] Basic board functionality
-- [x] Scenarios API
-- [x] Restart the scenario (after successfully finishing it)
-- [ ] Reduce navbar breakpoint
-- [ ] Add footer
-- [ ] Dark theme (with cookies)
 
 ## Build Setup
 
