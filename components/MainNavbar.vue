@@ -25,6 +25,18 @@
         <nuxt-link to="/basics" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile" @click="burgerIsOpen = false">
           Basics
         </nuxt-link>
+        <nuxt-link to="/play" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile" @click="burgerIsOpen = false">
+          Play
+        </nuxt-link>
+        <nuxt-link to="/resources" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile" @click="burgerIsOpen = false">
+          Resources
+        </nuxt-link>
+        <nuxt-link to="/advanced" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile" @click="burgerIsOpen = false">
+          Advanced
+        </nuxt-link>
+        <nuxt-link to="/faq" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile" @click="burgerIsOpen = false">
+          FAQ
+        </nuxt-link>
         <!-- <NavbarDropdown :links="linksIntermediate" /> -->
       </div>
       <div class="navbar-end">

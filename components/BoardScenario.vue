@@ -128,7 +128,7 @@ export default {
     initializeBoard () {
       this.game = new tenuki.Game({
         element: this.$refs.tenukiBoard,
-        boardSize: 5
+        boardSize: this.scenario.presetLayout ? this.scenario.presetLayout.getLength() : 5
       })
       this.game.callbacks.postMove = this.playerMoved
       this.setLayout()
@@ -161,7 +161,7 @@ export default {
           this.game.pass()
         }
       } else {
-        this.game.playAt(x - 1, y - 1)
+        this.game.playAt(y - 1, x - 1) // game engine has x and y mixed up, so I switch them here
       }
       this.unblockUserInput()
       if (message && (message.length > 0)) {

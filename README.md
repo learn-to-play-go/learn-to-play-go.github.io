@@ -6,25 +6,7 @@
 
 To create a free, modern, interactive, mobile-friendly and highly maintainable resource for learning Go.
 
-# Roadmap
-
-- [x] Basic page functionality
-- [x] Rules
-- [ ] Basics (eyes, ladder, snapback, end of the game)
-- [ ] Ranks and servers
-- [ ] Other resources (editors, communities, tsumego, etc)
-- [ ] About page (agenda, feedback email?, libs used, project links)
-- [x] Adjust the design ($primary, overall layout)
-- [ ] Fix this readme
-- [ ] **>>> First release <<<**
-- [ ] Intermediate advice~
-- [ ] Prepare everything for i18n
-- [ ] Set up the contribution guide
-- [ ] Dark theme (with cookies)
-- [ ] **>>> Second release <<<**
-- [ ] ...
-
-## Build Setup
+## Development
 
 ``` bash
 # install dependencies

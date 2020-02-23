@@ -9,9 +9,22 @@ import Layout from '~/components/Layout'
 '. . . . .',
 '. . . . .',
 '. . . . .'
+
+'. . . . . . . . .',
+'. . . . . . . . .',
+'. . . . . . . . .',
+'. . . . . . . . .',
+'. . . . . . . . .',
+'. . . . . . . . .',
+'. . . . . . . . .',
+'. . . . . . . . .',
+'. . . . . . . . .'
 */
 
 const scenarios = {
+
+  /* Rules */
+
   intro: new Scenario([
     new Step(2, 3, 3, 3, 'wow it works'),
     new Step(4, 4, 3, 4, null, 'tadaa')
@@ -26,6 +39,16 @@ const scenarios = {
     '. . . . .',
     '. . B . .',
     '. B W B .',
+    '. . . . .',
+    '. . . . .'
+  ])),
+  escapeCapture: new Scenario([
+    new Step(4, 3, -1, -1, "This move doesn't help your stone! Try to attach a stone directly to it", "Great! Now you have plenty more liberties and white can't capture your stones for now")
+  ], 'Save your stone from being captured',
+  new Layout([
+    '. . . . .',
+    '. . W . .',
+    '. W B W .',
     '. . . . .',
     '. . . . .'
   ])),
@@ -50,7 +73,7 @@ const scenarios = {
     '. . . . .'
   ])),
   ko: new Scenario([
-    new Step(4, 3, -1, -1, "This move doesn't capture white's stone!", "White can't capture black's stone by playing at square, because it would return to the board position that you started with")
+    new Step(4, 3, -1, -1, "This move doesn't capture white's stone!", "White can't capture black's stone by playing at the square, because it would return to the board position that you started with")
   ], "Capture white's stone",
   new Layout([
     '. . . . .',
@@ -68,6 +91,78 @@ const scenarios = {
     'B B . . .',
     '. . . . .',
     '. . . . .'
+  ])),
+
+  /* Basics */
+
+  suicideCapture: new Scenario([
+    new Step(5, 5, -1, -1, "This move doesn't capture white's group!", 'As long as the "suicide stone" captures something - you can play it')
+  ], 'White has no outside liberties, just the one in the centre - take it',
+  new Layout([
+    '. . . . . . . . .',
+    '. . . . . . . . .',
+    '. . . B B B . . .',
+    '. . B W W W B . .',
+    '. . B W . W B . .',
+    '. . B W W W B . .',
+    '. . . B B B . . .',
+    '. . . . . . . . .',
+    '. . . . . . . . .'
+  ])),
+  falseEye: new Scenario([
+    new Step(5, 6, -1, -1, "This move doesn't capture white!", "White's group is left with just 1 eye")
+  ], "It may appear that the right side of the white's group has an eye, but it's not an eye. Capture part of it",
+  new Layout([
+    '. . . . . . . . .',
+    '. . . . . . . . .',
+    '. . B B B B B . .',
+    '. B W W B W W B .',
+    '. B W . W . W B .',
+    '. B W W W W B B .',
+    '. . B B B B B . .',
+    '. . . . . . . . .',
+    '. . . . . . . . .'
+  ])),
+
+  /* Advanced */
+
+  ladder: new Scenario([
+    new Step(5, 3, 6, 4, "Try a different move to atari white's stones"),
+    new Step(6, 5, 5, 4),
+    new Step(4, 4, 5, 5),
+    new Step(5, 6, 4, 5),
+    new Step(3, 5, 4, 6),
+    new Step(4, 7, 3, 6),
+    new Step(2, 6, 3, 7),
+    new Step(3, 8, 2, 7),
+    new Step(1, 7, 2, 8, 'Try to continue the same pattern'),
+    new Step(2, 9, 1, 8),
+    new Step(1, 9, -1, -1, "Capture all white's stones!", 'Just like that, white never had an option to escape the Ladder')
+  ], "Try to Atari white's stones indefinitely",
+  new Layout([
+    '. . . . . . . . .',
+    '. . . . . . . . .',
+    '. . . . . . . . .',
+    '. . . . . . . . .',
+    '. . . . . . . . .',
+    '. B W . . . . . .',
+    '. B W B . . . . .',
+    '. . B . . . . . .',
+    '. . . . . . . . .'
+  ])),
+  snapback: new Scenario([
+    new Step(4, 5, 5, 5, "This move doesn't capture white's stone", 'Your stones have got into a "snapback"', 1500)
+  ], "Capture white's stone in the center",
+  new Layout([
+    '. . . . . . . . .',
+    '. . . . . . . . .',
+    '. . . W W W W . .',
+    '. . . W . B W . .',
+    '. . W B W B W . .',
+    '. . . B B W W . .',
+    '. . . . . . . . .',
+    '. . . . . . . . .',
+    '. . . . . . . . .'
   ]))
 }
 

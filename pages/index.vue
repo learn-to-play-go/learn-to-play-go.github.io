@@ -41,6 +41,12 @@
       <BoardScenario :scenario="scenarios.captureGroup" />
 
       <ul>
+        <li>Accordingly, you can <strong>escape from being captured</strong> and save your stones</li>
+      </ul>
+
+      <BoardScenario :scenario="scenarios.escapeCapture" />
+
+      <ul>
         <li>Stones placed on the edge have <strong>fewer liberties</strong> than those elsewhere on the board</li>
       </ul>
 
@@ -78,8 +84,8 @@
 </template>
 
 <script>
-import BoardScenario from '@/components/BoardScenario' // <BoardScenario :scenario="scenarios.intro" />
-import BoardStatic from '@/components/BoardStatic' // <BoardStatic :layout="layouts.intro" />
+import BoardScenario from '@/components/BoardScenario'
+import BoardStatic from '@/components/BoardStatic'
 import Scenarios from '@/components/ScenarioList'
 import Layouts from '@/components/LayoutList'
 
