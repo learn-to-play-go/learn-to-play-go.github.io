@@ -20,7 +20,7 @@
     <div class="navbar-menu is-family-secondary" :class="{'is-active': burgerIsOpen}">
       <div class="navbar-start">
         <nuxt-link to="/" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile" @click="burgerIsOpen = false">
-          Home
+          Rules
         </nuxt-link>
         <nuxt-link to="/basics" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile" @click="burgerIsOpen = false">
           Basics
