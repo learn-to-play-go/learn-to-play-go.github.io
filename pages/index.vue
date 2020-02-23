@@ -1,82 +1,77 @@
 <template>
-  <div class="container">
-    <div class="section">
-      <div class="content">
-        <h1>Rules</h1>
+  <div>
+    <div class="content is-medium">
+      <h1 class="has-text-centered-mobile is-family-primary is-size-1-desktop is-size-3-mobile">
+        Rules
+      </h1>
 
-        <ul>
-          <li>Go Pieces are called <strong>stones</strong>.</li>
-          <li>Stones are placed on the <strong>intersections</strong> of the board</li>
-          <li>Stones can't be moved after they are placed, but they can be removed from the board</li>
-          <li>Players take turns placing stones of their colour, one stone at a time</li>
-          <li>Black goes <strong>first</strong></li>
-        </ul>
+      <ul>
+        <li>Go Pieces are called <strong>stones</strong>.</li>
+        <li>Stones are placed on the <strong>intersections</strong> of the board</li>
+        <li>Stones <strong>can't be moved</strong> after they are placed, but they <strong>can be removed</strong> from the board</li>
+        <li>Players <strong>take turns</strong> placing stones of their colour, one stone at a time</li>
+        <li>Black goes <strong>first</strong></li>
+      </ul>
 
-        <BoardScenario :scenario="scenarios.anywhere" />
+      <BoardScenario :scenario="scenarios.anywhere" />
 
-        Snippet: place a stone anywhere on the board
+      <h2>Liberties</h2>
+      <ul>
+        <li><strong>Liberty</strong> is an unoccupied intersection horizontally or vertically adjacent to a stone</li>
+      </ul>
 
-        <h2>Liberties</h2>
-        <ul>
-          <li>Liberty is an unoccupied intersection horizontally or vertically adjacent to a stone</li>
-        </ul>
+      <BoardStatic :layout="layouts.liberties" />
 
-        <BoardStatic :layout="layouts.liberties" />
-        Snippet: static, showing 4 liberties around 1 stone
+      <ul>
+        <li>If all the liberties are taken by the stones of opposing colour, such stone is getting <strong>captured</strong> and is removed from the board</li>
+      </ul>
 
-        <ul>
-          <li>If all the liberties are taken by the stones of opposing colour, such stone is getting captured and is removed from the board</li>
-        </ul>
+      <BoardScenario :scenario="scenarios.capture" />
 
-        <BoardScenario :scenario="scenarios.capture" />
-        Snippet: Capture a stone
+      <ul>
+        <li><strong>Groups</strong> of stones of the same colour placed <strong>horizontally or vertically</strong> adjacent to each other <strong>share liberties</strong></li>
+      </ul>
 
-        <ul>
-          <li>Stones of the same colour placed horizontally or vertically adjacent to each other share liberties</li>
-        </ul>
+      <BoardStatic :layout="layouts.groupLiberties" />
 
-        <!-- <BoardStatic :layout="layouts.intro" /> -->
-        Snippet: static, showing 8 liberties around 3 stones in a row
+      <ul>
+        <li>If a group of stones loses all of its liberties, <strong>the entire group</strong> is getting captured</li>
+      </ul>
 
-        <ul>
-          <li>If a group of stones loses all of its liberties, the entire group is getting captured</li>
-        </ul>
+      <BoardScenario :scenario="scenarios.captureGroup" />
 
-        <!-- <BoardScenario :scenario="scenarios.intro" /> -->
-        Snippet: Capture a group of 3 stones
+      <ul>
+        <li>Stones placed on the edge have <strong>fewer liberties</strong> than those elsewhere on the board</li>
+      </ul>
 
-        <ul>
-          <li>Stones placed on the edge have fewer liberties</li>
-        </ul>
+      <BoardStatic :layout="layouts.edgeLiberties" />
 
-        <!-- <BoardStatic :layout="layouts.intro" /> -->
-        Snippet: static, edge stone liberties
+      <ul>
+        <li>Accordingly, it takes <strong>fewer stones to capture</strong> stones placed on the edge</li>
+      </ul>
 
-        <ul>
-          <li>Accordingly, such stones take fewer stones to capture them</li>
-        </ul>
+      <BoardScenario :scenario="scenarios.captureEdge" />
 
-        <!-- <BoardScenario :scenario="scenarios.intro" /> -->
-        Snippet: Capture a stone on the edge
+      <h2>Ko</h2>
+      <i>Reads like the first 'co' in 'coconut'</i>
+      <ul>
+        <li>Players are not allowed to make a move that <strong>returns the board to its previous position</strong></li>
+        <li>An arrangement of stones that allows repetition is commonly called <strong>Ko shape</strong></li>
+      </ul>
 
-        <h2>Ko</h2>
-        <i>Reads like the first 'co' in 'coconut'</i>
-        <ul>
-          <li>Players are not allowed to make a move that returns the board to its previous position</li>
-          <li>An arrangement of stones that allows repetition is commonly called Ko shape</li>
-        </ul>
+      <BoardScenario :scenario="scenarios.ko" />
 
-        <!-- <BoardScenario :scenario="scenarios.intro" /> -->
-        Snippet: Ko shape
+      <ul>
+        <li>It can appear <strong>anywhere</strong> on the board</li>
+      </ul>
 
-        <ul>
-          <li>It can appear anywhere on the board</li>
-        </ul>
+      <BoardScenario :scenario="scenarios.koEdge" />
 
-        <!-- <BoardScenario :scenario="scenarios.intro" /> -->
-        Snippet: Ko shape on the edge
-
-        <p>This is it. Just 2 rules: liberties and ko. Got you interested? Continue to the basics page: button</p>
+      <div class="ending has-text-centered">
+        <h4>This is it for the rules. Got you interested?</h4>
+        <nuxt-link class="button is-primary is-medium basics-button is-flex-mobile" to="/basics">
+          Proceed to the Basics section
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -102,3 +97,9 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+.ending
+  margin-top: 5rem
+  margin-bottom: 2rem
+</style>

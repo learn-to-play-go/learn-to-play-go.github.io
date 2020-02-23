@@ -1,13 +1,24 @@
 <template>
-  <div>
-    <div class="board-container no-input">
-      <div ref="tenukiBoard" class="board tenuki-board" />
-    </div>
-    <article class="message is-info" :class="{'is-hidden': !messageShown}">
-      <div class="message-body">
-        {{ message }}
+  <div class="columns">
+    <div class="column is-narrow">
+      <div>
+        <article class="message is-primary is-medium is-hidden-tablet" :class="{'is-hidden': !messageShown}">
+          <div class="message-body">
+            {{ message }}
+          </div>
+        </article>
+        <div class="board-container no-input">
+          <div ref="tenukiBoard" class="board tenuki-board" />
+        </div>
       </div>
-    </article>
+    </div>
+    <div class="column">
+      <article class="message is-primary is-medium is-hidden-mobile" :class="{'is-hidden': !messageShown}">
+        <div class="message-body">
+          {{ message }}
+        </div>
+      </article>
+    </div>
   </div>
 </template>
 

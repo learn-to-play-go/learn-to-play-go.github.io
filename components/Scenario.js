@@ -1,7 +1,7 @@
 const EventEmitter = require('events')
 
 class Step {
-  constructor (expectX, expectY, responseX, responseY, messageFail, messageInfo, messageSuccess, responseMS = 500, passMS = 100) {
+  constructor (expectX, expectY, responseX, responseY, messageFail, messageSuccess, responseMS = 500, passMS = 0) {
     this.expect = { // x and y are board coords that start with 1
       x: expectX,
       y: expectY
@@ -12,7 +12,6 @@ class Step {
     }
     this.message = {
       success: messageSuccess,
-      info: messageInfo,
       fail: messageFail
     }
     this.isAnywhere = (expectX < 0) && (expectY < 0)
@@ -23,12 +22,13 @@ class Step {
 }
 
 class Scenario extends EventEmitter {
-  constructor (steps, presetLayout) {
+  constructor (steps, description, presetLayout) {
     super()
     this.currentStepIndex = 0
     this.steps = steps // array of Step
     this.totalSteps = this.steps.length
     this.responseTimeoutObj = null
+    this.description = description
     this.presetLayout = presetLayout
   }
 
@@ -58,12 +58,14 @@ class Scenario extends EventEmitter {
   }
 
   respond () {
-    this.emit('responded', this.currentStep().response.x, this.currentStep().response.y, this.currentStep().message.info, this.currentStep().isPass, this.isLastStep())
+    // the game engine has x and y mixed up so I alter it here
+    this.emit('responded', this.currentStep().response.y, this.currentStep().response.x, this.currentStep().message.info, this.currentStep().isPass, this.isLastStep())
     this.advance()
   }
 
   validate (playedX, playedY) {
-    return this.currentStep().isAnywhere || ((this.currentStep().expect.x === playedX) && (this.currentStep().expect.y === playedY))
+    // the game engine has x and y mixed up so I alter it here
+    return this.currentStep().isAnywhere || ((this.currentStep().expect.x === playedY) && (this.currentStep().expect.y === playedX))
   }
 
   isLastStep () {

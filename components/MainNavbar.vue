@@ -1,36 +1,39 @@
 <template>
-  <div class="container">
-    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a
-          role="button"
-          class="navbar-burger"
-          aria-label="menu"
-          aria-expanded="false"
-          :class="{'is-active': burgerIsOpen}"
-          @click="burgerIsOpen = !burgerIsOpen"
-        >
-          <span aria-hidden="true" />
-          <span aria-hidden="true" />
-          <span aria-hidden="true" />
-        </a>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand is-marginless">
+      <nuxt-link class="navbar-item logo-link" to="/">
+        <img src="~/assets/logo.svg" width="112" height="28">
+      </nuxt-link>
+      <a
+        role="button"
+        class="navbar-burger"
+        aria-label="menu"
+        aria-expanded="false"
+        :class="{'is-active': burgerIsOpen}"
+        @click="burgerIsOpen = !burgerIsOpen"
+      >
+        <span aria-hidden="true" />
+        <span aria-hidden="true" />
+        <span aria-hidden="true" />
+      </a>
+    </div>
+    <div class="navbar-menu is-family-secondary" :class="{'is-active': burgerIsOpen}">
+      <div class="navbar-start">
+        <nuxt-link to="/" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile" @click="burgerIsOpen = false">
+          Home
+        </nuxt-link>
+        <nuxt-link to="/basics" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile" @click="burgerIsOpen = false">
+          Basics
+        </nuxt-link>
+        <!-- <NavbarDropdown :links="linksIntermediate" /> -->
       </div>
-      <div class="navbar-menu" :class="{'is-active': burgerIsOpen}">
-        <div class="navbar-start">
-          <nuxt-link to="/" class="navbar-item is-tab is-unselectable">
-            Home
-          </nuxt-link>
-          <nuxt-link to="/basics" class="navbar-item is-tab is-unselectable">
-            Basics
-          </nuxt-link>
-          <nuxt-link to="/about" class="navbar-item is-tab is-unselectable">
-            About
-          </nuxt-link>
-          <!-- <NavbarDropdown :links="linksIntermediate" /> -->
-        </div>
+      <div class="navbar-end">
+        <nuxt-link to="/about" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile" @click="burgerIsOpen = false">
+          About
+        </nuxt-link>
       </div>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </template>
 
 <script>
@@ -54,8 +57,12 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@import "~bulma"
-.nuxt-link-exact-active
-  @extend .is-active
-.nuxt-link-active
+.navbar-end
+    padding-right: 2rem
++mobile
+  .navbar-end
+    padding-right: 0rem
+  .navbar-menu .navbar-item
+    min-height: 4rem !important
+    height: 4rem !important
 </style>

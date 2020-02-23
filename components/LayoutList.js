@@ -7,6 +7,14 @@ import Layout from '~/components/Layout'
 // b: 'b',
 // c: 'c'
 
+/*
+'. . . . .',
+'. . . . .',
+'. . . . .',
+'. . . . .',
+'. . . . .'
+*/
+
 const layouts = {
   intro: new Layout([
     '. . . . .',
@@ -18,10 +26,24 @@ const layouts = {
   liberties: new Layout([
     '. . . . .',
     '. . S . .',
-    '. S B S .',
-    '. . . . .',
+    '. S W S .',
+    '. . S . .',
     '. . . . .'
-  ])
+  ], '4 liberties are marked with squares'),
+  groupLiberties: new Layout([
+    '. . S . .',
+    '. S W S .',
+    '. S W S .',
+    '. S W S .',
+    '. . S . .'
+  ], "White's group has 8 liberties"),
+  edgeLiberties: new Layout([
+    'Wa S . . .',
+    'S . . . .',
+    '. . . . .',
+    '. . S . .',
+    '. S Wb S .'
+  ], "White's A stone has 2 liberties, and white's B stone has 3 liberties")
 }
 
 export default layouts

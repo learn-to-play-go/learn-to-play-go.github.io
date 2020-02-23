@@ -1,34 +1,50 @@
 <template>
-  <div>
-    <div class="board-container" :class="{'no-input': !inputAllowed}">
-      <div ref="tenukiBoard" class="board tenuki-board" />
-    </div>
-    <article class="message" :class="[{'is-hidden': !message.shown}, message.type]">
-      <div class="message-header">
-        <p>{{ message.title }} </p>
-      </div>
-      <div class="message-body">
-        <p>{{ message.text }}</p>
-        <div>
-          <button
-            v-if="message.shown && (message.type === messageTypes.success)"
-            type="button"
-            class="button button-restart is-primary"
-            @click="restart()"
-          >
-            Restart this puzzle
-          </button>
-          <button
-            v-if="message.shown && (message.type === messageTypes.error)"
-            type="button"
-            class="button button-restart is-danger"
-            @click="undo()"
-          >
-            Try a different move
-          </button>
+  <div class="columns">
+    <div class="column is-narrow">
+      <div>
+        <article class="message is-primary scenario-description is-medium is-hidden-tablet">
+          <div class="message-body">
+            {{ scenario.description }}
+          </div>
+        </article>
+        <div class="board-container" :class="{'no-input': !inputAllowed}">
+          <div ref="tenukiBoard" class="board tenuki-board" />
         </div>
       </div>
-    </article>
+    </div>
+    <div class="column">
+      <article class="message is-primary scenario-description is-medium is-hidden-mobile">
+        <div class="message-body">
+          {{ scenario.description }}
+        </div>
+      </article>
+      <article class="message is-medium" :class="[{'is-hidden': !message.shown}, message.type]">
+        <div class="message-header">
+          <p>{{ message.title }} </p>
+        </div>
+        <div class="message-body">
+          <p>{{ message.text }}</p>
+          <div>
+            <button
+              v-if="message.shown && (message.type === messageTypes.success)"
+              type="button"
+              class="button button-restart is-success is-medium"
+              @click="restart()"
+            >
+              Restart this puzzle
+            </button>
+            <button
+              v-if="message.shown && (message.type === messageTypes.error)"
+              type="button"
+              class="button button-restart is-danger is-medium"
+              @click="undo()"
+            >
+              Try a different move
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
   </div>
 </template>
 
@@ -80,7 +96,7 @@ export default {
         defaultTexts,
         message: {
           shown: false,
-          type: messageTypes.plain,
+          type: messageTypes.error,
           title: 'Placeholder',
           text: 'Lorem ipsum'
         },
@@ -172,7 +188,7 @@ export default {
 
 <style lang="sass">
 .message
-  margin-top: 0.5em
+  margin-top: 1em
 .button-restart
   margin-top: 0.5em
 </style>

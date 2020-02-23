@@ -1,12 +1,68 @@
-@import '~bulma/bulma'
-@import "~/assets/tenuki.css"
+$primary: hsl(39, 60%, 80%)
+$body-background-color: hsl(0, 0%, 95%)
+$family-primary: "Roboto"
+$family-secondary: "Open Sans"
+$navbar-height: 7rem
+$navbar-background-color: hsl(39, 55%, 85%)
+$navbar-item-color:		hsl(42, 40%, 40%)
+$navbar-item-hover-color: hsl(42, 40%, 15%)
+$navbar-tab-active-color: 	hsl(42, 30%, 2%)
+$navbar-tab-hover-border-bottom-color: transparent
+$navbar-tab-active-border-bottom-color: transparent
+$navbar-item-img-max-height: 3.5rem
+
+.content 
+  max-width: 960px
+  margin-left: auto
+  margin-right: auto
+  padding-top: 2.5rem
+  padding-bottom: 3rem
 
 .board-container
   width: 20em
   height: 20em
-  margin-top: 1em
+  margin: 1rem
 .board
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25)
+  border: 1px solid rgba(0, 0, 0, 0.2)
   width: 100% !important
   height: 100% !important
 .no-input
   pointer-events: none
+  
+@import '~bulma/bulma'
+@import "~/assets/tenuki.css"
+
++mobile
+  .board-container
+    margin-left: auto
+    margin-right: auto
+  .navbar, .navbar-brand, .navbar-burger
+    min-height: 5rem
+    height: 5rem
+  .content
+    padding-top: 1rem
+    margin-left: 0.75rem
+    margin-right: 0.75rem
+    &.is-medium
+      font-size: $size-normal
+  .message.is-medium
+      font-size: $size-normal
+  .button.is-medium
+      font-size: $size-normal
+  .message
+    margin-top: 0rem
+    padding-left: 1rem
+  .basics-button
+    margin-left: auto
+    margin-right: auto
+
+@media screen and (max-width: 321px)
+  .board-container
+    width: 16rem
+    height: 16rem
+
+.nuxt-link-exact-active
+  @extend .is-active
+.nuxt-link-exact-active.logo-link
+  background-color: rgba(0, 0, 0, 0) !important

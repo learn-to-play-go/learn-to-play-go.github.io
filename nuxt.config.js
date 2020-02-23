@@ -5,7 +5,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Learn to play Go',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -41,13 +41,19 @@ export default {
   */
   modules: [
     '@nuxtjs/bulma',
-    '@nuxtjs/axios',
     '@nuxtjs/style-resources'
   ],
   styleResources: {
     sass: [
       '@/assets/main.sass'
     ]
+  },
+  webfontloader: {
+    google: {
+      families: [
+        'Roboto:400,700'
+      ]
+    }
   },
   /*
   ** Axios module configuration
