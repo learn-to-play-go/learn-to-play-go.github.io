@@ -15,7 +15,7 @@
       <h2>Play online</h2>
 
       <ul>
-        <li>Go to <a href="https://online-go.com/play">https://online-go.com/play</a></li>
+        <li>Go to <a href="https://online-go.com/play" target="_blank">https://online-go.com/play</a></li>
         <li>Register an account (no email verification required!)</li>
         <li>Go to "Play" on the top, choose 9x9 and the time mode of your liking</li>
         <li>Play the game!</li>

@@ -5,8 +5,8 @@
         About
       </h1>
 
-      <p><strong>Project repository</strong>: <a href="https://github.com/learn-to-play-go/learn-to-play-go.github.io">https://github.com/learn-to-play-go/learn-to-play-go.github.io</a></p>
-      <p><strong>Contact</strong>: <a href="mailto:learngo@yahoo.com">learngo@yahoo.com</a></p>
+      <p><strong>Project repository</strong>: <a href="https://github.com/learn-to-play-go/learn-to-play-go.github.io" target="_blank">https://github.com/learn-to-play-go/learn-to-play-go.github.io</a></p>
+      <p><strong>Contact</strong>: <a href="mailto:learngo@yahoo.com" target="_blank">learngo@yahoo.com</a></p>
     </div>
   </div>
 </template>
