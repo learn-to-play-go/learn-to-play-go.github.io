@@ -19,30 +19,44 @@
     </div>
     <div class="navbar-menu is-family-secondary" :class="{'is-active': burgerIsOpen}">
       <div class="navbar-start">
-        <nuxt-link to="/" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile" @click="burgerIsOpen = false">
-          Rules
-        </nuxt-link>
-        <nuxt-link to="/basics" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile" @click="burgerIsOpen = false">
-          Basics
-        </nuxt-link>
-        <nuxt-link to="/play" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile" @click="burgerIsOpen = false">
-          Play
-        </nuxt-link>
-        <nuxt-link to="/resources" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile" @click="burgerIsOpen = false">
-          Resources
-        </nuxt-link>
-        <nuxt-link to="/advanced" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile" @click="burgerIsOpen = false">
-          Advanced
-        </nuxt-link>
-        <nuxt-link to="/faq" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile" @click="burgerIsOpen = false">
-          FAQ
-        </nuxt-link>
+        <div @click="burgerIsOpen = false">
+          <nuxt-link to="/" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile">
+            Rules
+          </nuxt-link>
+        </div>
+        <div @click="burgerIsOpen = false">
+          <nuxt-link to="/basics" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile">
+            Basics
+          </nuxt-link>
+        </div>
+        <div @click="burgerIsOpen = false">
+          <nuxt-link to="/play" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile">
+            Play
+          </nuxt-link>
+        </div>
+        <div @click="burgerIsOpen = false">
+          <nuxt-link to="/resources" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile">
+            Resources
+          </nuxt-link>
+        </div>
+        <div @click="burgerIsOpen = false">
+          <nuxt-link to="/advanced" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile">
+            Advanced
+          </nuxt-link>
+        </div>
+        <div @click="burgerIsOpen = false">
+          <nuxt-link to="/faq" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile">
+            FAQ
+          </nuxt-link>
+        </div>
         <!-- <NavbarDropdown :links="linksIntermediate" /> -->
       </div>
       <div class="navbar-end">
-        <nuxt-link to="/about" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile" @click="burgerIsOpen = false">
-          About
-        </nuxt-link>
+        <div @click="burgerIsOpen = false">
+          <nuxt-link to="/about" class="navbar-item is-tab is-unselectable is-size-5 has-text-centered-mobile">
+            About
+          </nuxt-link>
+        </div>
       </div>
     </div>
   </nav>
