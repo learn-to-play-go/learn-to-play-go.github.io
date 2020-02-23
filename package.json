@@ -19,7 +19,7 @@
     "@nuxtjs/style-resources": "^1.0.0",
     "nuxt": "^2.0.0",
     "nuxt-webfontloader": "^1.1.0",
-    "tenuki": "git+ssh://git@github.com:learn-to-play-go/tenuki.git",
+    "tenuki": "https://github.com/learn-to-play-go/tenuki.git",
     "vue-click-outside": "^1.0.7"
   },
   "devDependencies": {
@@ -30,6 +30,7 @@
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
     "node-sass": "^4.13.1",
+    "now": "^17.0.4",
     "push-dir": "^0.4.1",
     "sass-loader": "^8.0.2"
   }

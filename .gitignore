@@ -91,3 +91,4 @@ sw.*
 
 # Webpack Monitor
 .monitor
+.now
