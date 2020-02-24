@@ -64,6 +64,8 @@
         <li><a href="https://forums.online-go.com/" target="_blank">OGS forum</a> - a growing community of very dedicated players who are always ready to help</li>
         <li><a href="https://openstudyroom.org/" target="_blank">Open Study Room</a> - a community of players who are focused on improving their game and helping each other in doing so</li>
         <li><a href="https://www.twitch.tv/directory/game/Go" target="_blank">Go category on Twitch</a> - although small it has a very close-knit community which is very welcoming to beginners. Also, real life tournaments being streamed there</li>
+        <li><a href="https://wheretoplaygo.com/" target="_blank">Where to play Go</a> - find a nearby Go club and connect with people to play Go in real life</li>
+        <li><a href="http://senseis.xmp.net" target="_blank">Sensei's Library</a> - crowdsourced "wikipedia of Go" with lots of information about the game</li>
         <li>Youtube - search for any Go related question to find some of the most popular channels. It was decided to not include them here as to prevent favouritism as well as upsetting someone for not being mentioned</li>
       </ul>
 
