@@ -36,7 +36,7 @@
         <li>Get used to looking at intersections</li>
         <li>Get used to the time settings</li>
       </ul>
-      <p>Advice for the <strong>next 30 games</strong>:</p>
+      <p>Advice for the <strong>following 30 games</strong>:</p>
       <ul>
         <li>Try to notice when your stones are about to get captured and prevent that</li>
         <li>Try to put your stones closer to each other and keep them connected</li>

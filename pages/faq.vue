@@ -17,7 +17,7 @@
         <li>They advance "down" towards 1k, and then graduate as 1 Dan (1d for short)</li>
         <li>Dan ranks advance up to the highest available Dan rank, usually 9d online</li>
         <li>The highest Dan rank may be strong enough to play Professionals, but it's not always true</li>
-        <li>Professions have their own ranking system which doesn't reflect their strange, but rather their tournament achievements</li>
+        <li>Professions have their own ranking system which doesn't reflect their strength, but rather their tournament achievements</li>
         <li>Pro ranks start at 1 Professional Dan (1p for short) and advance up towards 9p</li>
         <li>Since strength isn't directly reflected through Professional ranks, it is very much possible for a 1p to be stronger than a 9p. As well as two 9p having a fairly one-sided record of games</li>
       </ul>
