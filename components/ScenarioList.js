@@ -151,7 +151,7 @@ const scenarios = {
     '. . . . . . . . .'
   ])),
   snapback: new Scenario([
-    new Step(4, 5, 5, 5, "This move doesn't capture white's stone", 'Your stones have got into a "snapback"', 1500)
+    new Step(4, 5, 5, 5, "This move doesn't capture white's stone", 'Your stones have gotten into a "snapback"', 1500)
   ], "Capture white's stone in the center",
   new Layout([
     '. . . . . . . . .',
