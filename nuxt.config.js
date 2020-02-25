@@ -41,7 +41,8 @@ export default {
   */
   modules: [
     '@nuxtjs/bulma',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    'nuxt-webfontloader'
   ],
   styleResources: {
     sass: [
@@ -51,7 +52,8 @@ export default {
   webfontloader: {
     google: {
       families: [
-        'Roboto:400,700'
+        'Roboto:400,700',
+        'Open+Sans:400,700'
       ]
     }
   },
