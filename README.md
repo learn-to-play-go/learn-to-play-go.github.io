@@ -14,7 +14,7 @@ To create a free, modern, interactive, mobile-friendly and highly maintainable r
 
 - [x] Rephrase "occupied intersection" into "surrounded"
 
-- [ ] Explain passing better
+- [x] Explain passing better
 
 - [ ] In real life -> over the board
 

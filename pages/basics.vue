@@ -76,7 +76,7 @@
         <li>The game of Go can end in 3 ways: <strong>by the resignation</strong> of either side, by either side <strong>running out of time</strong>, or <strong>by counting</strong></li>
         <li>Most of the time white get at least 0.5 points of compensation, as to <strong>prevent draws</strong></li>
         <li>Either player can <strong>resign</strong> at any time during the game and subsequently lose it</li>
-        <li>If both players <strong>pass</strong>, it is agreed to begin the <strong>counting</strong> of the board</li>
+        <li>If both players <strong>consecutively pass</strong> (skip their turn), it is agreed to begin the <strong>counting</strong> of the board</li>
         <li>Many assumptions are made at the time players agree to begin the counting. It is <strong>not necessary to play out every single move and occupy every single intersection</strong> to end the game</li>
       </ul>
 
