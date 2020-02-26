@@ -6,20 +6,6 @@
 
 To create a free, modern, interactive, mobile-friendly and highly maintainable resource for learning Go.
 
-# Feedback
-
-- [x] First page doesn't give the impression of the first page - add introduction
-
-- [x] False eyes explained poorly (remove the "they are but they aren't")
-
-- [x] Rephrase "occupied intersection" into "surrounded"
-
-- [x] Explain passing better
-
-- [x] In real life -> over the board
-
-- [ ] Better FAQ
-
 ## Development
 
 ``` bash
