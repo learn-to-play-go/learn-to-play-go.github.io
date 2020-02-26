@@ -6,7 +6,7 @@
       </h1>
 
       <ul>
-        <li>Go is played both <strong>online</strong> and <strong>in real life</strong></li>
+        <li>Go is played both <strong>online</strong> and <strong>over the board</strong></li>
         <li>East Asian regions have a significantly larger community, but the West has plenty enough too</li>
         <li>An average 19x19 game online takes 30 to 50 minutes</li>
         <li>An average 9x9 game online takes less than 15 minutes, and usually less than 10 for beginners</li>

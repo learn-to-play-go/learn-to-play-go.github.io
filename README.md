@@ -16,7 +16,7 @@ To create a free, modern, interactive, mobile-friendly and highly maintainable r
 
 - [x] Explain passing better
 
-- [ ] In real life -> over the board
+- [x] In real life -> over the board
 
 - [ ] Better FAQ
 
