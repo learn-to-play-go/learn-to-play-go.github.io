@@ -35,7 +35,7 @@
 
       <ul>
         <li>An intersection is only considered to be an eye if there is no way to capture <strong>part of it</strong></li>
-        <li>Intersections that visually appear to be forming an eye, but really don't, are colloquially called <strong>false eyes</strong></li>
+        <li>Such intersections are colloquially called <strong>false eyes</strong></li>
       </ul>
 
       <BoardScenario :scenario="scenarios.falseEye" />

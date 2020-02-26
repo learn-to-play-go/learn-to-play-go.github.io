@@ -10,7 +10,7 @@ To create a free, modern, interactive, mobile-friendly and highly maintainable r
 
 - [x] First page doesn't give the impression of the first page - add introduction
 
-- [ ] False eyes explained poorly (remove the "they are but they aren't")
+- [x] False eyes explained poorly (remove the "they are but they aren't")
 
 - [ ] Rephrase "occupied intersection" into "surrounded"
 
