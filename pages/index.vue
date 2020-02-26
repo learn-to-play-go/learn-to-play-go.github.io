@@ -1,9 +1,18 @@
 <template>
   <div>
     <div class="content is-medium">
-      <h1 class="has-text-centered-mobile is-family-primary is-size-1-desktop is-size-3-mobile">
-        Rules
+      <h1 class="is-size-1-desktop is-size-3-mobile">
+        Learn to play Go
       </h1>
+
+      <p>
+        <strong>Play</strong> the game <strong>while learning</strong> it.<br>
+        Dive straight into the <strong>interactive puzzles</strong> that would guide you through the rules of Go.
+      </p>
+
+      <h2 class="is-size-1-desktop is-size-3-mobile">
+        Rules
+      </h2>
 
       <ul>
         <li>Go Pieces are called <strong>stones</strong>.</li>

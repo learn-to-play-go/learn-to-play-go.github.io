@@ -8,7 +8,7 @@ To create a free, modern, interactive, mobile-friendly and highly maintainable r
 
 # Feedback
 
-- [ ] First page doesn't give the impression of the first page - add introduction
+- [x] First page doesn't give the impression of the first page - add introduction
 
 - [ ] False eyes explained poorly (remove the "they are but they aren't")
 
