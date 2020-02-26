@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="content is-medium">
-      <h1 class="has-text-centered-mobile is-family-primary is-size-1-desktop is-size-3-mobile">
+      <h1 class="is-size-1-desktop is-size-3-mobile">
         Basics
       </h1>
 
