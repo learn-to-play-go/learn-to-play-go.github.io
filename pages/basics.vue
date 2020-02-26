@@ -53,13 +53,13 @@
       <ul>
         <li>There are 2 ways to obtain points in the game: <strong>by capturing opponent's stones</strong> and by <strong>surrounding territory</strong> (intersections)</li>
         <li>Captured stones count as 1 point each</li>
-        <li>Occupied intersections count as 1 point each</li>
+        <li>Surrounded intersections count as 1 point each</li>
       </ul>
 
       <BoardStatic :layout="layouts.splitBoard" />
 
       <ul>
-        <li>To occupy an intersection, the group that covers it must have <strong>two eyes</strong> or <strong>enough room</strong> to form two eyes</li>
+        <li>To surround an intersection, the group that covers it must have <strong>two eyes</strong> or <strong>enough room</strong> to form two eyes</li>
       </ul>
 
       <BoardStatic :layout="layouts.splitBoardWhiteDead" />
